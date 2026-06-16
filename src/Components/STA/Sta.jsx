@@ -1,5 +1,6 @@
 import React from 'react'
 import './sta.css'
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 export default function Sta() {
@@ -20,7 +21,7 @@ export default function Sta() {
 						deliver performance at scale, in every major GEO.
 					</p>
 					<div className='cta-btns'>
-						<a href='/contacts' className='btn btn-primary btn-sta'>
+						<Link to='/contacts' className='btn btn-primary btn-sta'>
 							Start Cooperation
 							<svg
 								width='13'
@@ -37,10 +38,10 @@ export default function Sta() {
 									strokeLinejoin='round'
 								></path>
 							</svg>
-						</a>
-						<a href='/contacts' className='btn btn-gold-outline'>
+						</Link>
+						<Link to='/contacts' className='btn btn-gold-outline'>
 							Get in Touch
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 // import './App.css'
 import Features from './../../Components/Features/Features'
-
+import { Link } from 'react-router-dom'
 import KpiStrip from './../../Components/KpiStrip/KpiStrip'
 import MarqueeStrip from './../../Components/MarqueeStrip/MarqueeStrip'
 
@@ -52,7 +52,7 @@ function Home() {
 							</p>
 
 							<div className='hero-actions vis' data-a='up' data-d='3'>
-								<a href='/contacts' className='btn btn-primary'>
+								<Link to='/contacts' className='btn btn-primary'>
 									Start Cooperation
 									<svg
 										width='13'
@@ -69,10 +69,10 @@ function Home() {
 											strokeLinejoin='round'
 										></path>
 									</svg>
-								</a>
-								<a href='/contacts' className='btn btn-ghost'>
+								</Link>
+								<Link to='/contacts' className='btn btn-ghost'>
 									Get in Touch
-								</a>
+								</Link>
 							</div>
 
 							<KpiStrip />
