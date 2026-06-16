@@ -321,513 +321,47 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Hero micro stats */
-.hero-kpis {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px;
-  padding-top: 36px;
-  border-top: 1px solid var(--b0);
-}
 
-.kpi {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.kpi-v {
-  font-family: var(--f-head);
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  background: var(--g-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.kpi-l {
-  font-size: 0.78rem;
-  color: var(--t3);
-  font-weight: 500;
-}
-
-/* Decorative floating shapes */
-.hero-deco {
-  position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 46%;
-  pointer-events: none;
-  overflow: hidden;
-  opacity: 0.12;
-}
-.hero-deco svg { width: 100%; height: 100%; }
 
 /* ============================================================
    9. STATS BAND
    ============================================================ */
-.stats-band {
-  background: var(--bg-1);
-  border-top: 1px solid var(--b0);
-  border-bottom: 1px solid var(--b0);
-  padding: 52px 0;
-}
 
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.stat-cell {
-  padding: 8px 28px;
-  text-align: center;
-  border-right: 1px solid var(--b0);
-}
-.stat-cell:first-child { padding-left: 0; }
-.stat-cell:last-child  { border-right: none; padding-right: 0; }
-
-.stat-num {
-  font-family: var(--f-head);
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  background: var(--g-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
-
-.stat-lbl {
-  font-size: 0.82rem;
-  color: var(--t2);
-  font-weight: 600;
-}
-.stat-sub {
-  font-size: 0.72rem;
-  color: var(--t3);
-  margin-top: 3px;
-}
 
 /* ============================================================
    10. VERTICALS
    ============================================================ */
-.verticals { background: var(--bg-0); }
 
-.v-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 52px;
-}
-
-.v-card {
-  background: var(--bg-card);
-  border: 1px solid var(--b0);
-  border-radius: var(--r-l);
-  padding: 30px 24px;
-  position: relative;
-  overflow: hidden;
-  transition: transform var(--tm), border-color var(--tm), box-shadow var(--tm), background var(--tm);
-  cursor: default;
-}
-
-/* Top shimmer bar */
-.v-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--g-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--tm);
-}
-
-.v-card:hover {
-  background: var(--bg-card-h);
-  border-color: var(--border-g);
-  transform: translateY(-7px);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.32);
-}
-.v-card:hover::after { transform: scaleX(1); }
-
-.v-emoji {
-  font-size: 1.9rem;
-  margin-bottom: 14px;
-  display: block;
-}
-
-.v-name {
-  font-family: var(--f-head);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 9px;
-}
-
-.v-desc {
-  font-size: 0.83rem;
-  color: var(--t2);
-  line-height: 1.62;
-}
-
-.v-pill {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 3px 10px;
-  background: var(--gold-dim);
-  color: var(--gold);
-  font-size: 0.69rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  border-radius: 50px;
-}
 
 /* ============================================================
    11. TRAFFIC SOURCES
    ============================================================ */
-.traffic { background: var(--bg-1); }
 
-.src-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 52px;
-}
-
-.src-card {
-  background: var(--bg-card);
-  border: 1px solid var(--b0);
-  border-radius: var(--r-m);
-  padding: 26px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 11px;
-  text-align: center;
-  transition: var(--tf);
-}
-.src-card:hover {
-  border-color: var(--blue-lt);
-  background: var(--bg-card-h);
-  transform: translateY(-5px);
-  box-shadow: 0 14px 36px rgba(62,114,236,0.14);
-}
-
-.src-ico {
-  width: 52px; height: 52px;
-  background: var(--blue-dim);
-  border-radius: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  flex-shrink: 0;
-}
-
-.src-name {
-  font-family: var(--f-head);
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--t1);
-}
-
-.src-sub {
-  font-size: 0.72rem;
-  color: var(--t3);
-}
 
 /* ============================================================
    12. PARTNERS MARQUEE
    ============================================================ */
-.partners { background: var(--bg-0); padding: 88px 0; overflow: hidden; }
 
-.partners .container { margin-bottom: 48px; }
 
-.marquee-wrap {
-  position: relative;
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
-}
 
-.marquee-track {
-  display: flex;
-  gap: 20px;
-  animation: roll 32s linear infinite;
-  width: max-content;
-}
-.marquee-track:hover { animation-play-state: paused; }
 
-@keyframes roll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
 
-.p-chip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 20px;
-  background: var(--bg-card);
-  border: 1px solid var(--b0);
-  border-radius: 50px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: var(--tf);
-  cursor: default;
-}
-.p-chip:hover {
-  border-color: var(--border-g);
-  background: var(--bg-card-h);
-}
-
-.p-chip-ico {
-  width: 22px; height: 22px;
-  background: var(--gold-dim);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-}
-
-.p-chip-name {
-  font-size: 0.845rem;
-  font-weight: 600;
-  color: var(--t2);
-}
 
 /* ============================================================
    13. WHY US / FEATURES
    ============================================================ */
-.features { background: var(--bg-1); }
 
-.feat-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.feat-content .sec-sub { margin-bottom: 40px; }
-
-.check-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.check-item {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.chk {
-  width: 28px; height: 28px;
-  background: var(--gold-dim);
-  border: 1px solid var(--border-g);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--gold);
-  font-size: 0.72rem;
-  font-weight: 700;
-  margin-top: 1px;
-}
-
-.chk-body h4 {
-  font-size: 0.97rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-family: var(--f-head);
-  color: var(--t1);
-}
-.chk-body p {
-  font-size: 0.845rem;
-  color: var(--t2);
-  line-height: 1.65;
-}
-
-/* Staggered feature cards */
-.feat-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.fc {
-  background: var(--bg-card);
-  border: 1px solid var(--b0);
-  border-radius: var(--r-l);
-  padding: 28px 24px;
-  transition: var(--tm);
-}
-
-.fc:hover {
-  border-color: var(--border-g);
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-}
-
-.fc-ico { font-size: 1.65rem; margin-bottom: 14px; }
-.fc-title {
-  font-family: var(--f-head);
-  font-size: 0.97rem;
-  font-weight: 700;
-  margin-bottom: 9px;
-}
-.fc-body {
-  font-size: 0.82rem;
-  color: var(--t2);
-  line-height: 1.65;
-}
 
 /* ============================================================
    14. CTA SECTION
    ============================================================ */
-.cta-sec { background: var(--bg-0); padding: 100px 0; }
 
-.cta-box {
-  background: linear-gradient(145deg, #0D1630 0%, #09112A 100%);
-  border: 1px solid rgba(201, 151, 59, 0.14);
-  border-radius: var(--r-xl);
-  padding: 84px 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-box::before {
-  content: '';
-  position: absolute;
-  top: -120px; left: 50%;
-  transform: translateX(-50%);
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,151,59,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.cta-box h2 {
-  font-size: clamp(1.9rem, 3.5vw, 2.85rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  margin-bottom: 16px;
-}
-
-.cta-box p {
-  font-size: 1.02rem;
-  color: var(--t2);
-  max-width: 480px;
-  margin: 0 auto 40px;
-  line-height: 1.75;
-}
-
-.cta-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
 
 /* ============================================================
    15. FOOTER
    ============================================================ */
    
-.footer {
-  background: var(--bg-0);
-  border-top: 1px solid var(--b0);
-  padding: 72px 0 34px;
-}
 
-.footer-cols {
-  display: grid;
-  grid-template-columns: 1.9fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 60px;
-}
-
-.fb-desc {
-  font-size: 0.875rem;
-  color: var(--t2);
-  line-height: 1.72;
-  margin-top: 18px;
-  max-width: 260px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 9px;
-  margin-top: 26px;
-}
-
-.soc-btn {
-  width: 36px; height: 36px;
-  background: var(--bg-card);
-  border: 1px solid var(--b0);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  color: var(--t2);
-  transition: var(--tf);
-}
-.soc-btn:hover {
-  border-color: var(--border-g);
-  color: var(--gold);
-  background: var(--gold-dim);
-}
-
-.fc-head {
-  font-family: var(--f-head);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--t1);
-  margin-bottom: 20px;
-}
-
-.fc-links {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
-
-.fc-links a {
-  font-size: 0.865rem;
-  color: var(--t2);
-  transition: color var(--tf);
-}
-.fc-links a:hover { color: var(--gold-lt); }
-
-.footer-bottom {
-  border-top: 1px solid var(--b0);
-  padding-top: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.copy { font-size: 0.8rem; color: var(--t3); }
-
-.f-legal { display: flex; gap: 22px; }
-.f-legal a {
-  font-size: 0.8rem;
-  color: var(--t3);
-  transition: color var(--tf);
-}
-.f-legal a:hover { color: var(--t2); }
 
 /* ============================================================
    16. SCROLL ANIMATIONS
@@ -847,14 +381,15 @@ h1, h2, h3, h4, h5 {
   transform: none;
 }
 
-[data-d="1"] { transition-delay: 0.08s; }
-[data-d="2"] { transition-delay: 0.16s; }
-[data-d="3"] { transition-delay: 0.24s; }
-[data-d="4"] { transition-delay: 0.32s; }
-[data-d="5"] { transition-delay: 0.40s; }
-[data-d="6"] { transition-delay: 0.48s; }
-[data-d="7"] { transition-delay: 0.56s; }
-[data-d="8"] { transition-delay: 0.64s; }
+/* ДОБАВЛЯЕМ !IMPORTANT: теперь задержку ничто не сможет перебить */
+[data-d="1"] { transition-delay: 0.08s, 0.08s !important; }
+[data-d="2"] { transition-delay: 0.16s, 0.16s !important; }
+[data-d="3"] { transition-delay: 0.24s, 0.24s !important; }
+[data-d="4"] { transition-delay: 0.32s, 0.32s !important; }
+[data-d="5"] { transition-delay: 0.40s, 0.40s !important; }
+[data-d="6"] { transition-delay: 0.48s, 0.48s !important; }
+[data-d="7"] { transition-delay: 0.56s, 0.56s !important; }
+[data-d="8"] { transition-delay: 0.64s, 0.64s !important; }
 
 /* ============================================================
    17. SUBPAGE â€” SHARED
@@ -1137,4 +672,5 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 320px) {
   .btn-mobile {display: none;}
+  .btn-sta {font-size: 0.7em;padding: 6px 12px;}
 }

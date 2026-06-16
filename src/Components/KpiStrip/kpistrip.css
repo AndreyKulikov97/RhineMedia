@@ -1,0 +1,42 @@
+.hero-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--b0);
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.kpi-v {
+  font-family: var(--f-head);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--g-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.kpi-l {
+  font-size: 0.78rem;
+  color: var(--t3);
+  font-weight: 500;
+}
+
+/* Decorative floating shapes */
+.hero-deco {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 46%;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.12;
+}
+.hero-deco svg { width: 100%; height: 100%; }
