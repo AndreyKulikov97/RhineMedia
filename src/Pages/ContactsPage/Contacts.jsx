@@ -1,6 +1,5 @@
 import React from 'react'
 import './contacts.css'
-import Footer from '../../Components/Footer/Footer'
 
 export default function Contacts() {
 	return (
@@ -155,10 +154,10 @@ export default function Contacts() {
 						<div className='form-card vis' data-a='right'>
 							<h3>Send Us a Message</h3>
 
-							<form id='contactForm' novalidate=''>
+							<form id='contactForm' noValidate=''>
 								<div className='form-row-2'>
 									<div className='fg'>
-										<label for='fname'>First Name *</label>
+										<label htmlFor='fname'>First Name *</label>
 										<input
 											type='text'
 											id='fname'
@@ -168,7 +167,7 @@ export default function Contacts() {
 										/>
 									</div>
 									<div className='fg'>
-										<label for='lname'>Last Name *</label>
+										<label htmlFor='lname'>Last Name *</label>
 										<input
 											type='text'
 											id='lname'
@@ -180,7 +179,7 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='email'>Email Address *</label>
+									<label htmlFor='email'>Email Address *</label>
 									<input
 										type='email'
 										id='email'
@@ -191,7 +190,7 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='company'>Company / Brand</label>
+									<label htmlFor='company'>Company / Brand</label>
 									<input
 										type='text'
 										id='company'
@@ -201,7 +200,7 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='telegram'>Telegram / Skype Handle</label>
+									<label htmlFor='telegram'>Telegram / Skype Handle</label>
 									<input
 										type='text'
 										id='telegram'
@@ -211,9 +210,16 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='vertical'>Vertical / Niche *</label>
-									<select id='vertical' name='vertical' required=''>
-										<option value='' disabled='' selected=''>
+									<label htmlFor='vertical'>Vertical / Niche *</label>
+									{/* 1. Добавили defaultValue='' и сделали required правильным булевым свойством */}
+									<select
+										id='vertical'
+										name='vertical'
+										defaultValue=''
+										required
+									>
+										{/* 2. Убрали пустые кавычки у disabled и полностью удалили selected */}
+										<option value='' disabled>
 											Select a vertical…
 										</option>
 										<option value='dating'>Dating</option>
@@ -228,9 +234,11 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='budget'>Monthly Budget (USD)</label>
-									<select id='budget' name='budget'>
-										<option value='' disabled='' selected=''>
+									<label htmlFor='budget'>Monthly Budget (USD)</label>
+									{/* Добавили defaultValue='' для управления дефолтным выбором */}
+									<select id='budget' name='budget' defaultValue=''>
+										{/* Убрали лишнее, оставив чистый disabled */}
+										<option value='' disabled>
 											Select budget range…
 										</option>
 										<option value='under5k'>Under $5,000</option>
@@ -242,7 +250,7 @@ export default function Contacts() {
 								</div>
 
 								<div className='fg'>
-									<label for='message'>Message *</label>
+									<label htmlFor='message'>Message *</label>
 									<textarea
 										id='message'
 										name='message'
@@ -274,7 +282,7 @@ export default function Contacts() {
 										required=''
 									/>
 									<label
-										for='consent'
+										htmlFor='consent'
 										style={{
 											fontSize: '0.8rem',
 											color: 'var(--t2)',
@@ -323,9 +331,9 @@ export default function Contacts() {
 										<path
 											d='M1 7h12M7.5 1.5L13 7l-5.5 5.5'
 											stroke='currentColor'
-											stroke-width='1.8'
-											stroke-linecap='round'
-											stroke-linejoin='round'
+											strokeWidth='1.8'
+											strokeLinecap='round'
+											strokeLinejoin='round'
 										></path>
 									</svg>
 								</button>
@@ -447,7 +455,6 @@ export default function Contacts() {
 			{/* <!-- =========================================================
        FOOTER
   ========================================================= --> */}
-			<Footer />
 		</>
 	)
 }

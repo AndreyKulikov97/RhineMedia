@@ -1,85 +1,97 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom' // <-- 1. Добавили хук useLocation
 import './navbar.css'
 
-export default function Navbar({
-	ctagGhostText = 'Get in Touch',
-	ctaGhostLink = 'contact.html',
-	ctaPrimaryText = 'Start Cooperation',
-	ctaPimaryLink = 'conact.html'
-}) {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const [burgerMenu, setBurgerMenu] = useState(false)
+export default function Navbar() {
+	const [isScrolled, setIsScrolled] = useState(false)
+	const [burgerMenu, setBurgerMenu] = useState(false)
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 55) {
-                setIsScrolled(true)
-            } else {
-                setIsScrolled(false)
-            }
-        }
+	// <-- 2. Получаем текущий путь (выдаст "/" или "/contacts")
+	const location = useLocation()
 
-        window.addEventListener('scroll', handleScroll)
-        
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 55) {
+				setIsScrolled(true)
+			} else {
+				setIsScrolled(false)
+			}
+		}
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
 
-    useEffect(() => {
-        if (burgerMenu) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = ''
-        }
+	useEffect(() => {
+		if (burgerMenu) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+		return () => {
+			document.body.style.overflow = ''
+		}
+	}, [burgerMenu])
 
-        return () => {
-            document.body.style.overflow = ''
-        }
-    },[burgerMenu])
+	const toggleMenu = () => setBurgerMenu(!burgerMenu)
+	const closeMenu = () => setBurgerMenu(false)
 
-    const toggleMenu = () => setBurgerMenu(!burgerMenu)
-    const closeMenu = () => setBurgerMenu(false)
+	// <-- 3. Проверяем, находится ли пользователь на странице контактов
+	const isContactsPage = location.pathname === '/contacts'
 
-  return (
+	return (
 		<nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id='navbar'>
 			<div className='container'>
 				<div className='nav-inner'>
-					{/* <!-- Logo --> */}
-					<a href='index.html' className='logo'>
+					<Link to='/' className='logo'>
 						<div className='logo-mark'>RM</div>
 						<div className='logo-name'>
 							Rhine <span>Media</span>
 						</div>
-					</a>
+					</Link>
 
-					{/* <!-- Desktop links --> */}
+					{/* Desktop links */}
 					<ul className='nav-links'>
 						<li>
-							<a href='#verticals'>Verticals</a>
+							<a href='/#verticals'>Verticals</a>
 						</li>
 						<li>
-							<a href='#traffic'>Traffic Sources</a>
+							<a href='/#traffic'>Traffic Sources</a>
 						</li>
 						<li>
-							<a href='#partners'>Partners</a>
+							<a href='/#partners'>Partners</a>
 						</li>
 						<li>
-							<a href='#why-us'>Why Us</a>
+							<a href='/#why-us'>Why Us</a>
 						</li>
 						<li>
-							<a href='contact.html'>Contact</a>
+							<Link to='/contacts'>Contact</Link>
 						</li>
 					</ul>
 
-					{/* <!-- Right CTA + hamburger --> */}
+					{/* Right CTA + hamburger */}
 					<div className='nav-right'>
-						<a href={ctaGhostLink} className='btn btn-ghost'>
-							{ctaPrimaryText}
-						</a>
-						<a href={ctaPimaryLink} className='btn btn-primary btn-mobile'>
-							{ctaPrimaryText}
-						</a>
+						{/* 4. Используем тернарный оператор для смены кнопок на десктопе */}
+						{isContactsPage ? (
+							<>
+								<Link to='/' className='btn btn-ghost'>
+									Back to Home
+								</Link>
+								{/* Кнопку Send Message можно сделать тегом button или ссылкой на форму */}
+								<a href='#contact-form' className='btn btn-primary btn-mobile'>
+									Send Message
+								</a>
+							</>
+						) : (
+							<>
+								<Link to='/contacts' className='btn btn-ghost'>
+									Get in Touch
+								</Link>
+								<Link to='/contacts' className='btn btn-primary btn-mobile'>
+									Start Cooperation
+								</Link>
+							</>
+						)}
+
 						<button
 							className='ham'
 							id='ham'
@@ -93,35 +105,48 @@ export default function Navbar({
 					</div>
 				</div>
 			</div>
-			{/* <!-- Mobile menu drawer --> */}
 
+			{/* Mobile menu drawer */}
 			<div className={`mob-menu ${burgerMenu ? 'open' : ''}`} id='mobMenu'>
 				<span className='mob-close' id='mobClose' onClick={closeMenu}>
 					✕
 				</span>
-				<a href='#verticals' className='mob-link' onClick={closeMenu}>
+				<a href='/#verticals' className='mob-link' onClick={closeMenu}>
 					Verticals
 				</a>
-				<a href='#traffic' className='mob-link' onClick={closeMenu}>
+				<a href='/#traffic' className='mob-link' onClick={closeMenu}>
 					Traffic Sources
 				</a>
-				<a href='#partners' className='mob-link' onClick={closeMenu}>
+				<a href='/#partners' className='mob-link' onClick={closeMenu}>
 					Partners
 				</a>
-				<a href='#why-us' className='mob-link' onClick={closeMenu}>
+				<a href='/#why-us' className='mob-link' onClick={closeMenu}>
 					Why Us
 				</a>
-				<a href='contact.html' className='mob-link' onClick={closeMenu}>
+				<Link to='/contacts' className='mob-link' onClick={closeMenu}>
 					Contact
-				</a>
-				<a
-					href={ctaPimaryLink}
-					className='btn btn-primary'
-					style={{ marginTop: '14px' }}
-					onClick={closeMenu}
-				>
-					{ctaPrimaryText}
-				</a>
+				</Link>
+
+				{/* 5. Точно такая же проверка для мобильного меню */}
+				{isContactsPage ? (
+					<Link
+						to='/'
+						className='btn btn-primary'
+						style={{ marginTop: '14px' }}
+						onClick={closeMenu}
+					>
+						Back to Home
+					</Link>
+				) : (
+					<Link
+						to='/contacts'
+						className='btn btn-primary'
+						style={{ marginTop: '14px' }}
+						onClick={closeMenu}
+					>
+						Start Cooperation
+					</Link>
+				)}
 			</div>
 		</nav>
 	)
