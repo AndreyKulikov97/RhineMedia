@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.css'
 
-export default function Navbar() {
+export default function Navbar({
+	ctagGhostText = 'Get in Touch',
+	ctaGhostLink = 'contact.html',
+	ctaPrimaryText = 'Start Cooperation',
+	ctaPimaryLink = 'conact.html'
+}) {
     const [isScrolled, setIsScrolled] = useState(false)
     const [burgerMenu, setBurgerMenu] = useState(false)
 
@@ -69,11 +74,11 @@ export default function Navbar() {
 
 					{/* <!-- Right CTA + hamburger --> */}
 					<div className='nav-right'>
-						<a href='contact.html' className='btn btn-ghost'>
-							Get in Touch
+						<a href={ctaGhostLink} className='btn btn-ghost'>
+							{ctaPrimaryText}
 						</a>
-						<a href='contact.html' className='btn btn-primary btn-mobile'>
-							Start Cooperation
+						<a href={ctaPimaryLink} className='btn btn-primary btn-mobile'>
+							{ctaPrimaryText}
 						</a>
 						<button
 							className='ham'
@@ -110,12 +115,12 @@ export default function Navbar() {
 					Contact
 				</a>
 				<a
-					href='contact.html'
+					href={ctaPimaryLink}
 					className='btn btn-primary'
 					style={{ marginTop: '14px' }}
 					onClick={closeMenu}
 				>
-					Start Cooperation
+					{ctaPrimaryText}
 				</a>
 			</div>
 		</nav>

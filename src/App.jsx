@@ -9,19 +9,15 @@ import Sta from './Components/STA/Sta'
 import StatsBand from './Components/StatsBand/StatsBand'
 import Traffic from './Components/Traffic/Traffic'
 import Verticals from './Components/Verticals/Verticals'
+import Contacts from './Pages/ContactsPage/Contacts'
 
 function App() {
 	return (
 		<>
-			{/* <!-- =========================================================
-       NAVIGATION
-  ========================================================= --> */}
 			<Navbar />
-			{/* <!-- =========================================================
-       HERO
-  ========================================================= --> */}
-			<section className='hero'>
-				{/* <!-- Decorative BG --> */}
+			<Contacts />
+			{/* <section className='hero'>
+				
 				<div className='hero-grid'></div>
 				<div
 					className='orb orb-a'
@@ -33,18 +29,18 @@ function App() {
 				></div>
 				<div className='orb orb-c'></div>
 
-				{/* <!-- Decorative SVG rings (right side) --> */}
+				
 				
 
 				<div className='container' style={{ position: 'relative', zIndex: 2 }}>
 					<div style={{ maxWidth: '780px' }}>
-						{/* <!-- Status badge --> */}
+						
 						<div className='hero-badge vis'>
 							<span className='badge-pulse'></span>
 							Performance Media Buying Team
 						</div>
 
-						{/* <!-- Headline --> */}
+						
 						<h1 className='hero-h1 vis' data-a='up' data-d='1'>
 							<span style={{ display: 'block' }}>Performance Media</span>
 							<span style={{ display: 'block' }}>
@@ -53,7 +49,7 @@ function App() {
 							</span>
 						</h1>
 
-						{/* <!-- Subheadline --> */}
+						
 						<p className='hero-sub vis' data-a='up' data-d='2'>
 							We buy traffic for{' '}
 							<strong>Dating, Nutra, Gambling, Sweepstakes, iGaming </strong>
@@ -61,7 +57,7 @@ function App() {
 							premium scale.
 						</p>
 
-						{/* <!-- Action buttons --> */}
+						
 						<div className='hero-actions vis' data-a='up' data-d='3'>
 							<a href='contact.html' className='btn btn-primary'>
 								Start Cooperation
@@ -86,34 +82,24 @@ function App() {
 							</a>
 						</div>
 
-						{/* <!-- KPI strip --> */}
+						
 						<KpiStrip />
 					</div>
 				</div>
 			</section>
 
-			{/* <!-- =========================================================
-       STATS BAND
-  ========================================================= --> */}
 			<StatsBand />
 
-			{/* <!-- =========================================================
-       VERTICALS
-  ========================================================= --> */}
 			<section className='section verticals' id='verticals'>
 				<Verticals />
 			</section>
 
-			{/* <!-- =========================================================
-       TRAFFIC SOURCES
-  ========================================================= --> */}
 			<section className='section traffic' id='traffic'>
 				<Traffic />
 			</section>
 
 			<section className='partners' id='partners'>
 				<Partners />
-				{/* <!-- Scrolling marquee strip --> */}
 				<MarqueeStrip />
 			</section>
 
@@ -123,7 +109,7 @@ function App() {
 
 			<section className='cta-sec'>
 				<Sta />
-			</section>
+			</section> */}
 
 			<Footer />
 		</>
