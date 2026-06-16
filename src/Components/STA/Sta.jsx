@@ -20,7 +20,7 @@ export default function Sta() {
 						deliver performance at scale, in every major GEO.
 					</p>
 					<div className='cta-btns'>
-						<a href='contact.html' className='btn btn-primary btn-sta'>
+						<a href='/contacts' className='btn btn-primary btn-sta'>
 							Start Cooperation
 							<svg
 								width='13'
@@ -38,7 +38,7 @@ export default function Sta() {
 								></path>
 							</svg>
 						</a>
-						<a href='contact.html' className='btn btn-gold-outline'>
+						<a href='/contacts' className='btn btn-gold-outline'>
 							Get in Touch
 						</a>
 					</div>
