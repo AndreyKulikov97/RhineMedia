@@ -1,7 +1,11 @@
 import React from 'react'
 import './contacts.css'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
+import Accordion from '../../Components/Accordion/Accordion';
 
 export default function Contacts() {
+	useScrollAnimation();
+
 	return (
 		<>
 			{/* <!-- =========================================================
@@ -352,104 +356,7 @@ export default function Contacts() {
        FAQ SECTION
   ========================================================= --> */}
 			<section className='faq-section'>
-				<div className='container'>
-					<div className='sec-center vis' data-a='up'>
-						<div className='eyebrow'>FAQ</div>
-						<h2 className='sec-title'>
-							Common <span className='text-gold'>Questions</span>
-						</h2>
-						<p className='sec-sub'>
-							Everything you need to know before starting a cooperation with
-							Rhine Media.
-						</p>
-					</div>
-
-					<div className='faq-list'>
-						<div className='faq-item' data-a='up' data-d='1'>
-							<button className='faq-q' aria-expanded='false'>
-								What verticals does Rhine Media specialise in?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								We specialise in Dating, Nutra, Gambling, iGaming, Sweepstakes,
-								Adult, Crypto Offers and Mainstream verticals. Our team has deep
-								domain expertise in each of these niches and maintains direct
-								relationships with top publishers and affiliate networks across
-								all major GEOs.
-							</div>
-						</div>
-
-						<div className='faq-item' data-a='up' data-d='2'>
-							<button className='faq-q' aria-expanded='false'>
-								What is the minimum monthly budget to work with you?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								We typically work with partners investing a minimum of
-								$5,000/month in media spend. For certain verticals or exclusive
-								deal structures, higher minimums may apply. Contact us to
-								discuss your specific situation — we're flexible for the right
-								partnerships.
-							</div>
-						</div>
-
-						<div className='faq-item' data-a='up' data-d='3'>
-							<button className='faq-q' aria-expanded='false'>
-								How quickly can you launch a campaign?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								Once we have all required materials (creatives, landing pages,
-								offer details, tracking setup), we can typically launch
-								campaigns within 24–48 hours. Our streamlined onboarding process
-								ensures you're never waiting long to get traffic flowing.
-							</div>
-						</div>
-
-						<div className='faq-item' data-a='up' data-d='4'>
-							<button className='faq-q' aria-expanded='false'>
-								Do you work on a CPA, CPL or revenue share basis?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								We work across multiple pricing models including managed spend
-								(flat fee + performance bonus), CPA, CPL, RevShare and hybrid
-								structures. The right model depends on your vertical, volume and
-								offer type. We'll recommend the most suitable approach during
-								our initial consultation.
-							</div>
-						</div>
-
-						<div className='faq-item' data-a='up' data-d='5'>
-							<button className='faq-q' aria-expanded='false'>
-								Which GEOs do you cover?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								We have active campaigns running in 60+ GEOs worldwide,
-								including all Tier-1 markets (US, UK, DE, AU, CA, FR), LATAM
-								(BR, MX, CO), APAC (IN, PH, TH, JP), and MENA (AE, SA, EG). If
-								you need a specific GEO, let us know and we'll confirm our
-								capabilities.
-							</div>
-						</div>
-
-						<div className='faq-item' data-a='up' data-d='6'>
-							<button className='faq-q' aria-expanded='false'>
-								What reporting and tracking do you provide?
-								<span className='faq-arrow'>▾</span>
-							</button>
-							<div className='faq-a'>
-								All clients receive access to real-time performance dashboards
-								with full transparency on impressions, clicks, conversions,
-								spend and revenue. We integrate with all major tracking
-								platforms including Voluum, Binom, RedTrack, and custom S2S
-								postback setups. Weekly summary reports are provided as
-								standard.
-							</div>
-						</div>
-					</div>
-				</div>
+				<Accordion />
 			</section>
 
 			{/* <!-- =========================================================

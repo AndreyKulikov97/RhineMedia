@@ -617,6 +617,93 @@ h1, h2, h3, h4, h5 {
 }
 .map-stub span { font-size: 2rem; }
 
+.faq-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  margin-top: 32px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto !important;
+}
+
+.faq-item {
+  border: 1px solid var(--b0);
+  border-radius: var(--r-l);
+  overflow: hidden; 
+  transition: border-color var(--tf), background var(--tf);
+  height: auto !important;
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border: none !important;
+  font-family: var(--f-head);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  gap: 20px;
+  transition: color var(--tf);
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.faq-q:hover {
+  color: var(--gold) !important;
+}
+
+.faq-arrow {
+  font-size: 0.85rem;
+  color: var(--t3);
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+/* Ответ (Анимация высоты) */
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr; 
+  transition: grid-template-rows 0.25s ease-out;
+}
+
+.faq-item.open .faq-a {
+  grid-template-rows: 1fr;
+}
+
+.faq-a-content {
+  min-height: 0; 
+  padding: 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  transition: opacity 0.2s ease;
+  opacity: 0; 
+}
+
+.faq-item.open .faq-a-content {
+  padding-bottom: 22px; 
+  opacity: 1;
+}
+
+/* Запрещаем любым внешним стилям менять фон при фокусе */
+.faq-item:focus,
+.faq-item:focus-within,
+.faq-q:focus,
+.faq-q:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* ============================================================
    20. RESPONSIVE
    ============================================================ */
